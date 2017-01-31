@@ -15,7 +15,6 @@ function request(callback) {
 	console.log(x + "  " + y);
   var src = encodeURIComponent(document.getElementById("filter").getAttribute("src"));
   var dest = encodeURIComponent(document.getElementById("photo").getAttribute("src"));
-	// console.log(dest);
 	xhr.open("POST", "merge_image.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xhr.send("x="+ x +"&y="+ y +"&dest="+ dest +"&src=" + src);

@@ -14,12 +14,15 @@ if (!preg_match("#^[a-z0-9._-]+@[a-z].[a-z]{2,4}$#", $mail))
       $header .= "Content-Type: multipart/alternative;".$pl." boundary=\"$boundary\"".$pl;
       //==========
 
-      $headers = 'From: tyassine@e2r7p14.42.fr' . "\r\n" .
-      'Reply-To: tyassine@e2r7p14.42.fr' . "\r\n" .
-      'X-Mailer: PHP/' . phpversion();
+
 
       mail($to, $subject, $message, $headers);
       echo "envoyer!";
+
+}
+
+Class mail
+  {
 
 }
  ?>
