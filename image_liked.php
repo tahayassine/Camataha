@@ -14,10 +14,10 @@ $bdd = new Database($DB_DSN, $DB_USER, $DB_PASSWORD);
       $bdd->prepare("INSERT INTO likes(img_key,user_key)
       VALUES(:img_key,:user_key)",
       array("img_key" => $img, "user_key" =>$user_key), null);
-      echo "like";
+      echo "<i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i>";
     }else {
       $bdd->prepare("DELETE FROM likes WHERE img_key=? and user_key=?", array($img, $user_key));
-      echo "nolike";
+      echo "<i class=\"fa fa-heart\" aria-hidden=\"true\"></i>";
     }
   }
  ?>

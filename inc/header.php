@@ -1,6 +1,6 @@
-<div class="header">
+<div id="header">
   <div class="title">
-
+    <h1>Camataha</h1>
   </div>
   <div id="login">
   <?php

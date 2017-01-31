@@ -18,8 +18,9 @@
         if (isset($_POST) && isset($_POST['mail'])){
           $userlog = $bdd->prepare("SELECT * FROM users WHERE user_email=?", array($_POST["mail"]), "User", true);
           if ($userlog != null) {
-            $bdd->prepare("UPDATE users SET reini_key = :reini_key, WHERE user_email = :user_email", array(
-              'reini_key' => md5(microtime(TRUE)*100000),
+            $userlog['reini_key']= md5(microtime(TRUE)*100000);
+            $bdd->prepare("UPDATE users SET reini_key =:reini_key WHERE user_email =:user_email", array(
+              'reini_key' => $userlog['reini_key'],
               'user_email' => $_POST["mail"]
             ), null);
             $nwUser = new User($userlog);

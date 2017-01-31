@@ -98,7 +98,7 @@ class Image
 	public function getCardPublic($user, $bdd)
 	{
 		return "<img src=\"  ".$this->getLink()."\" alt=\"\">
-			<button class=\"like\" onclick=\"likeIt(this)\" >".($this->isLikedBy($user , $bdd)? "nolike" : "like")."</button>
+			<button class=\"like\" onclick=\"likeIt(this)\" >".($this->isLikedBy($user , $bdd)? "<i class=\"fa fa-heart\" aria-hidden=\"true\"></i>" : "<i class=\"fa fa-heart-o\" aria-hidden=\"true\"></i>")."</button>
 			<button class=\"addComment\" onclick=\"getForm(this)\" >✍</i></button>
 			<div class=\"comment\"><p>".$this->getComBy($user, $bdd)."</p></div>";
 	}
