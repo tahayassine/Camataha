@@ -18,7 +18,7 @@
           $image_src = false;
           echo "Image non valide";
         }
-        if ($image != false) {
+        if ($image_src != false ) {
           $image_width = 500;
           if($image_size[0] == $image_width){
             $image_finale = $image_src;
@@ -26,6 +26,7 @@
             $new_width[0] = $image_width;
             $new_height[1] = 375;
             $image_finale = imagecreatetruecolor($new_width[0],$new_height[1]);
+            var_dump($image_src);
             imagecopyresampled($image_finale,$image_src,0,0,0,0,$new_width[0],$new_height[1],$image_size[0],$image_size[1]);
           }
           $file = "img/tmp/".$_SESSION['user_key'].".png";
