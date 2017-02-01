@@ -13,7 +13,9 @@
 if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"])) {
   if (strlen($_POST["password"]) < 6) {
     echo "<p class=\"message_alert\">le mot de passe doit contenir aux moins 6 caractères</p>";
-  }else{
+  }else if (filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) == false) {
+    echo "<p class=\"message_alert\">Votre mail n'est pas valide.</p>";
+  } else{
   $arrayUser = array('user_login' => $_POST["username"],
                   'password' => hash('whirlpool', $_POST["password"]),
                   'user_email'=> $_POST["email"],

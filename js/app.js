@@ -21,7 +21,7 @@ function getForm(elem){
     elem.appendChild(text);
   var sub = document.createElement("button");
   sub.setAttribute("onclick", "commentIt()");
-  sub.innerHTML = "Commentez";
+  sub.innerHTML = "<i class=\"fa fa-comment-o\" aria-hidden=\"true\"></i>";
   elem.appendChild(sub);
 }
 }

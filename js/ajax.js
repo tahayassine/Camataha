@@ -91,5 +91,3 @@ function commentIt(callback){
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 			xhr.send("img="+ img);
 	}
-
-	console.log("bite2");
